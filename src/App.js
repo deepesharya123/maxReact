@@ -1,4 +1,5 @@
-import ExpenseItem from "./components/ExpenseItem";
+import Expenses from "./components/Expenses";
+import React from "react";
 
 function App() {
   // this is imparative approach as i am tellling line by line what to do to render the html.
@@ -28,37 +29,26 @@ function App() {
     },
   ];
 
+  return (React.createElement(
+    "div",
+    {},
+    React.createElement("h1", {}, "Let's get started"),
+    React.createElement(
+      "h1",
+      {},
+      React.createElement(Expenses, { items: expenses })
+    )
+  ));
+
   // below is declarative approach
-  return (
-    <div>
-      <h1>Let's get started.</h1>
-      <h1>
-        <ExpenseItem
-          title={expenses[0].title}
-          amount={expenses[0].amount}
-          date={expenses[0].date}
-        />
-
-        <ExpenseItem
-          title={expenses[1].title}
-          amount={expenses[1].amount}
-          date={expenses[1].date}
-        />
-
-        <ExpenseItem
-          title={expenses[2].title}
-          amount={expenses[2].amount}
-          date={expenses[2].date}
-        />
-
-        <ExpenseItem
-          title={expenses[3].title}
-          amount={expenses[3].amount}
-          date={expenses[3].date}
-        />
-      </h1>
-    </div>
-  );
+  // return (
+  //   <div>
+  //     <h1>Let's get started.</h1>
+  //     <h1>
+  //       <Expenses items={expenses} />
+  //     </h1>
+  //   </div>
+  // );
 }
 
 export default App;
