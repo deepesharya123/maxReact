@@ -1,7 +1,7 @@
 import "./Card.css";
 import React from "react";
 
-function Card(props) {
+const Card = (props) => {
     const classes = 'card '+ props.className;
     // can directly pass any other component inside another, 
     // we need to use {props.children}

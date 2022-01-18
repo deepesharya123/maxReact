@@ -1,4 +1,4 @@
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
 import React from "react";
 
 function App() {
@@ -28,27 +28,27 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
-
-  return (React.createElement(
-    "div",
-    {},
-    React.createElement("h1", {}, "Let's get started"),
-    React.createElement(
-      "h1",
-      {},
-      React.createElement(Expenses, { items: expenses })
-    )
-  ));
+  // This is how react DOM work
+  // return (React.createElement(
+  //   "div",
+  //   {},
+  //   React.createElement("h1", {}, "Let's get started"),
+  //   React.createElement(
+  //     "h1",
+  //     {},
+  //     React.createElement(Expenses, { items: expenses })
+  //   )
+  // ));
 
   // below is declarative approach
-  // return (
-  //   <div>
-  //     <h1>Let's get started.</h1>
-  //     <h1>
-  //       <Expenses items={expenses} />
-  //     </h1>
-  //   </div>
-  // );
+  return (
+    <div>
+      <h1>Let's get started.</h1>
+      <h1>
+        <Expenses items={expenses} />
+      </h1>
+    </div>
+  );
 }
 
 export default App;
