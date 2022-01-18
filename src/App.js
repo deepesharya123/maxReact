@@ -1,5 +1,7 @@
-import Expenses from "./components/Expenses/Expenses";
 import React from "react";
+
+import NewExpense from "./components/NewExpense/NewExpense";
+import Expenses from "./components/Expenses/Expenses";
 
 function App() {
   // this is imparative approach as i am tellling line by line what to do to render the html.
@@ -43,7 +45,7 @@ function App() {
   // below is declarative approach
   return (
     <div>
-      <h1>Let's get started.</h1>
+      <NewExpense/>
       <h1>
         <Expenses items={expenses} />
       </h1>

@@ -11,17 +11,16 @@ const ExpenseItem = (props) => {
   // hence recall the state with the changed value 
   const [title,setTitle] = useState(props.title);
 
-
   // let titleChange = props.title;
   const clickHandler = ()=>{
     // useState() is function with arg as a update that is required 
     // and then it recalls the component with that updated value;
     setTitle("Update title");
-
+    setTitle("Title changing again");
 
     // props.title = "changing the title "+i;   //can't set the props property
     // titleChange = "changing the title";     //  this does'nt work as react first resolve all the component
-    console.log("CLicked! ",title);
+    console.log("Clicked! ",title);
   }
 
 
@@ -37,7 +36,7 @@ const ExpenseItem = (props) => {
         <div className="expense-item__price">Rs {props.amount}</div>
       </div>
 
-      <button onClick={clickHandler}>Change title</button>
+      <button onLoad={clickHandler}>Change title</button>
     </Card>
   );
 }
