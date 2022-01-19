@@ -45,7 +45,7 @@ function App() {
   // below is declarative approach
   return (
     <div>
-      <NewExpense/>
+      <NewExpense />
       <h1>
         <Expenses items={expenses} />
       </h1>
