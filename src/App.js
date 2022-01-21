@@ -42,16 +42,15 @@ function App() {
   //   )
   // ));
 
-  const addExpenseHandler = (enteredInput)=>{
+  const addExpenseHandler = (enteredInput) => {
     console.log(enteredInput);
-  }
+  };
+
   // below is declarative approach
   return (
     <div>
-      <NewExpense onAddExpense={addExpenseHandler}  />
-      <h1>
-        <Expenses items={expenses} />
-      </h1>
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <Expenses items={expenses} />
     </div>
   );
 }
