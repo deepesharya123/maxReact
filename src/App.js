@@ -9,7 +9,7 @@ function App() {
   // para.textContent = "This will also be visible";
   // document.getElementById("root").appendChild(para);
 
-  const expenses = [
+  let expenses = [
     {
       id: "e1",
       title: "Toilet Paper",
@@ -42,10 +42,13 @@ function App() {
   //   )
   // ));
 
+  const addExpenseHandler = (enteredInput)=>{
+    console.log(enteredInput);
+  }
   // below is declarative approach
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler}  />
       <h1>
         <Expenses items={expenses} />
       </h1>

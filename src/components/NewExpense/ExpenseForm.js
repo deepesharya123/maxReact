@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -15,12 +15,12 @@ const ExpenseForm = () => {
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
     // console.log("enteredTitle ", enteredTitle);
-    // setUserInput({
+    // setUserInput({   // changing the value of a field with one state is not recomded by thi method
     //   ...userInput,
     //   enteredTitle: event.target.value,
     // });
     // correct method of using state is as follows:
-    // setUserInput((userInput) => {
+    // setUserInput((userInput) => { //this method is recommended for changing the value of a field with one state
     //   return { ...userInput, enteredTitle: event.target.value };
     // });
     // console.log("title changed", userInput);
@@ -29,11 +29,11 @@ const ExpenseForm = () => {
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
     // console.log("enteredAmount ", enteredAmount);
-    // setUserInput({
+    // setUserInput({ //changing the value of a field with one state is not recomded by thi method
     //   ...userInput,
     //   enteredAmount: event.target.value,
     // });
-    // setUserInput((usertInput) => {
+    // setUserInput((usertInput) => { //this method is recommended for changing the value of a field with one state
     //   return { ...usertInput, enteredAmount: event.target.value };
     // });
     // console.log("amount changed ", userInput);
@@ -42,11 +42,11 @@ const ExpenseForm = () => {
   const dateChnageHandler = (event) => {
     setEnteredDate(event.target.value);
     // console.log("enterdDate ", enteredDate);
-    // setUserInput({
+    // setUserInput({ //changing the value of a field with one state is not recomded by thi method
     //   ...userInput,
     //   enteredDate: event.target.value,
     // });
-    // setUserInput((userInput) => {
+    // setUserInput((userInput) => {  //this method is recommended for changing the value of a field with one state 
     //   return { ...userInput, enteredDate: event.target.value };
     // });
     // console.log("date cahnged", userInput);
@@ -60,6 +60,7 @@ const ExpenseForm = () => {
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
+    props.onSaveExpenseData(expenseData);
     console.log(expenseData);
     setEnteredAmount("");
     setEnteredDate("");
