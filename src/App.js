@@ -46,9 +46,9 @@ function App() {
 
   const addExpenseHandler = (enteredInput) => {
     // setExpenses([enteredInput,...expenses]);
-    setExpenses((prevEx)=>{
-      return [...prevEx,enteredInput]
-    })
+    setExpenses((prevEx) => {
+      return [...prevEx, enteredInput];
+    });
   };
 
   // below is declarative approach
