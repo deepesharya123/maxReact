@@ -6,7 +6,7 @@ const SingleUser = (props) => {
   return (
     <div className="singleUser">
       <div>
-        {props.userInfo.name} {props.userInfo.age}
+       Name: {props.userInfo.name}    Age: {props.userInfo.age}
       </div>
     </div>
   );

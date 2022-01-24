@@ -48,9 +48,8 @@ const UserInput = (props) => {
     </form>
   );
 
-  const [curState,setCurState] = useState(false);
   const CloseErrorHandler = ()=>{
-    setCurState(false);
+    setInputValidate(true);
   }
     
   return (
